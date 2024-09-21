@@ -65,6 +65,7 @@ class SpringbootBatchExampleApplicationTests {
         assertEquals("productMigrationJob", jobExecution.getJobInstance().getJobName());
         assertEquals(BatchStatus.COMPLETED, jobExecution.getStatus());
         assertEquals(ExitStatus.COMPLETED, jobExecution.getExitStatus());
+        assertEquals(product1JpaRepository.count(), product2JpaRepository.count());
     }
 
 }
